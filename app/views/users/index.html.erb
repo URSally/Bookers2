@@ -1,19 +1,17 @@
-<div>
-  <%= flash[:notice] %>
-</div>
-<%= render 'userinfo', books: @books %>
+<%= render 'books/userinfo', books: @books %>
+
 <mian>
   <div class="col-md-8 offset-md-1">
-    <h2>Books</h2>
+    <h2>Users</h2>
     <table class="table table-hover table-inverse">
       <thead>
         <tr>
-            <% @books.each do |book| %>
+            <% @users.each do |user| %>
             <th>Title</th>
-            <%= link_to book.title, "/books/#{book.id}" %>
+            <%= user.name %>
             
             <th>Opinion</th>
-            <%= book.body %>
+           
             <% end %>
          </tr>
     </thead>

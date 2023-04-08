@@ -1,3 +1,6 @@
+<div>
+  <%= flash[:notice] %>
+</div>
 <%= render 'userinfo', books: @books %>
 
 <mian>
@@ -14,7 +17,8 @@
             <%= book.body %>
             <% end %>
             <% if @book.user == current_user %>
-               <%= link_to "削除", book_path(@book), method: :delete %>
+              <%= link_to "編集", edit_book_path(@book) %>
+              <%= link_to "削除", book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
             <% end %>
          </tr>
     </thead>
